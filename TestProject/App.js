@@ -61,7 +61,7 @@ const styles = StyleSheet.create ({
 const App = () => {
    // const[name, setname] = useState('');
     const [text, setText] = useState('');
-
+    // change
     //const[age, setage] = useState('');
     return (
       <View>
