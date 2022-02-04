@@ -63,7 +63,7 @@ const styles = StyleSheet.create ({
 const App = () => {
    // const[name, setname] = useState('');
     const [text, setText] = useState('');
-    // change
+    // change of test feature
     //const[age, setage] = useState('');
     return (
       <View>
