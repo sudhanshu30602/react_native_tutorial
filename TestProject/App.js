@@ -61,22 +61,49 @@ const styles = StyleSheet.create ({
 */
 //
 
-const APP = () => {
-  return (
-    <View style = {styles.container}> 
-       <Image source={require('./src/assets/test.png')}  style={{ width: 200, height: 200, alignItems: "flex-start"}} /> 
-       <Image source={{uri: 'https://reactjs.org/logo-og.png'}}
-       style={{width: 200, height: 200}} />
-    </View>
-  )
-}
-export default APP
+//  const APP = () => {
+//    return (
+//      <View style = {styles.container}> 
+//         <Image source={require('./src/assets/test.png')}  style={{ width: 200, height: 200, alignItems: "flex-start"}} /> 
+//         <Image source={{uri: 'https://reactjs.org/logo-og.png'}}
+//         style={{width: 200, height: 200}} />
+//      </View>
+//    )
+//  }
+//  export default APP
 
 
- const styles = StyleSheet.create({
-    container: {
-    flex : 1,
-    alignItems : "center",
-    justifyContent : "space-evenly"
-    },
-  });
+//  const styles = StyleSheet.create({
+//      container: {
+//      flex : 1,
+//      alignItems : "center",
+//      justifyContent : "space-evenly"
+//      },
+//    });
+
+
+
+// const APP = () => {
+//   return (
+//     <View style = {styles.container}> 
+//       <Text style = {styles.text} onPress={() => {
+//         alert('You tapped the button!');
+//        }}> 
+//       Press Me
+//       </Text> 
+//     </View>
+//   )
+// }
+// export default APP
+
+// const styles = StyleSheet.create({
+//        container: {
+//        flex : 1,
+//        alignItems : "center",
+//        justifyContent: "center"
+//        },
+//        text: {
+//         fontWeight: 'bold',
+//         fontSize: 30,
+//        }
+//    });
