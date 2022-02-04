@@ -8,7 +8,9 @@ import {
   Alert, 
   Image,
   Button,
-
+  TouchableWithoutFeedback,
+  TouchableHighlight,
+  TouchableOpacity,
 }from 'react-native';
 
 /*
@@ -100,6 +102,7 @@ const styles = StyleSheet.create ({
 //        container: {
 //        flex : 1,
 //        alignItems : "center",
+
 //        justifyContent: "center"
 //        },
 //        text: {
@@ -107,3 +110,42 @@ const styles = StyleSheet.create ({
 //         fontSize: 30,
 //        }
 //    });
+
+
+// Text in box comes alert
+
+ const APP = () => {
+  return (
+    <View style={styles.container}>
+        <TouchableOpacity onPress={() => alert('Hello 😊😉 !')}>
+        <View style={styles.square}>
+          <Text style={styles.text}>Touch Here</Text>
+        </View>
+        </TouchableOpacity>
+    </View>
+   );
+ }
+ export default APP
+
+ 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    paddingHorizontal: 10
+  },
+
+  square: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    justifyContent: "center"
+    },
+
+    text: {
+      fontWeight: 'bold',
+         fontSize: 20,
+    }
+
+ 
+}); 
