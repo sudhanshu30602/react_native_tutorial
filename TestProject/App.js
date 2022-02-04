@@ -36,8 +36,7 @@ export default App;
 // const styles = StyleSheet.create({
 //    container: {
 //     flex : 1,
-//     flexDirection: 'column',
-//     alignItems : "center",
+//    c
 //     backgroundColor : "black"
 //    },
 //    box: {
@@ -59,33 +58,17 @@ const styles = StyleSheet.create ({
   }
 });
 */
+//
 
-const App = () => {
-   // const[name, setname] = useState('');
-    const [text, setText] = useState('');
-    // change of test feature
-    //const[age, setage] = useState('');
-    return (
-      <View>
-       <TextInput
-        style={{height: 40}}
-        placeholder="Enter Your Name :"
-        onChangeText={newText => setText(newText)}
-        defaultValue={text}
-      />
-       <Text style={{justifyContent: "space-around", fontSize: 42}}>
-         Name : {text}</Text>
-         <Button
-        title="Press me"
-        onPress={() => Alert.alert(`Hello ${text}`)}
-      />
-       <Button
-        title="Press me"
-        onPress={() => Alert.alert('hello' + text)}
-      />
-      </View>
-    )
-}
+const APP = () => {
+  return (
+    <View style={{ flex: 2 }}> 
+      <View style={{ flex: 1, backgroundColor: 'yellow' }} />
+      <View style={{ flex: 2, backgroundColor: 'red' }} />
+      <View style={{ flex: 2, backgroundColor: 'green' }} />
+    </View>
+  );
+};
+   
 
-export default App;
-
+export default APP
