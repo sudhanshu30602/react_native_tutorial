@@ -6,6 +6,7 @@ import {
   TextInput,
   View,
   Alert, 
+  Image,
   Button,
 
 }from 'react-native';
@@ -62,13 +63,20 @@ const styles = StyleSheet.create ({
 
 const APP = () => {
   return (
-    <View style={{ flex: 2 }}> 
-      <View style={{ flex: 1, backgroundColor: 'yellow' }} />
-      <View style={{ flex: 2, backgroundColor: 'red' }} />
-      <View style={{ flex: 2, backgroundColor: 'green' }} />
+    <View style = {styles.container}> 
+       <Image source={require('./src/assets/test.png')}  style={{ width: 200, height: 200, alignItems: "flex-start"}} /> 
+       <Image source={{uri: 'https://reactjs.org/logo-og.png'}}
+       style={{width: 200, height: 200}} />
     </View>
-  );
-};
-   
-
+  )
+}
 export default APP
+
+
+ const styles = StyleSheet.create({
+    container: {
+    flex : 1,
+    alignItems : "center",
+    justifyContent : "space-evenly"
+    },
+  });
