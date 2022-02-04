@@ -5,6 +5,8 @@ import {
   Text,
   TextInput,
   View,
+  Alert, 
+  Button,
 
 }from 'react-native';
 
@@ -67,9 +69,19 @@ const App = () => {
       <View>
        <TextInput
         style={{height: 40}}
-        placeholder="Type here to translate!"
+        placeholder="Enter Your Name :"
         onChangeText={newText => setText(newText)}
         defaultValue={text}
+      />
+       <Text style={{justifyContent: "space-around", fontSize: 42}}>
+         Name : {text}</Text>
+         <Button
+        title="Press me"
+        onPress={() => Alert.alert(`Hello ${text}`)}
+      />
+       <Button
+        title="Press me"
+        onPress={() => Alert.alert('hello' + text)}
       />
       </View>
     )
