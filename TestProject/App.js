@@ -115,14 +115,14 @@ const styles = StyleSheet.create ({
 // Text in box comes alert
 
  const APP = () => {
-  return (
-    <View style={styles.container}>
-        <TouchableOpacity onPress={() => alert('Hello 😊😉 !')}>
-        <View style={styles.square}>
-          <Text style={styles.text}>Touch Here</Text>
-        </View>
-        </TouchableOpacity>
-    </View>
+  return (      
+      <View style={styles.container}>
+      <View style={styles.button}> 
+       <TouchableOpacity onPress={() => alert('Hello 😊😉 !')} style={styles.button}>
+            <Text style={styles.text}> SUBMIT </Text> 
+      </TouchableOpacity>
+       </View>  
+     </View> 
    );
  }
  export default APP
@@ -131,21 +131,22 @@ const styles = StyleSheet.create ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 10
+    justifyContent: 'center',
+    alignItems : 'center'
   },
 
-  square: {
-    alignItems: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 10,
+  button: {    
+    backgroundColor:'red',
+     height : '10%',
+     width: '90%',
+     alignItems: 'center',
+     borderRadius: 50,
     justifyContent: "center"
     },
-
-    text: {
+  text: {
       fontWeight: 'bold',
          fontSize: 20,
+         color: 'yellow',
+         
     }
-
- 
 }); 
