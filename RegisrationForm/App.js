@@ -19,6 +19,9 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
+import EditText from './component/EditText';
+import Roundbutton from './component/Roundbutton';
+import PropTypes from 'prop-types'
 
 // // const image = { uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png"};
 
@@ -30,7 +33,7 @@ import {
 //   const image = { uri: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg" };
 //   return (
 //     <ImageBackground source={image} style={styles.image}>
-      
+
 //       <Text style={styles.text}>Registration</Text>
 //       <View style={styles.container}>
 //         <Text style={styles.text1}> Name: </Text>
@@ -114,40 +117,83 @@ import {
 // });
 
 
+// const App = () => {
+//   return(
+
+//   <View style={styles.container}>
+//            <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed SUBMIT')}style={styles.button}>
+//              <Text style={styles.text1}> SUBMIT </Text>
+//            </TouchableOpacity>
+
+//            <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed Press ME')}style={styles.button}>
+//              <Text style={styles.text1}> Press Me </Text>
+//            </TouchableOpacity>
+
+//            <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed Enter Me')}style={styles.button}>
+//              <Text style={styles.text1}> Enter Me </Text>
+//            </TouchableOpacity>
+//            <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed Tap')}style={styles.button}>
+//              <Text style={styles.text1}> Tap ME </Text>
+//            </TouchableOpacity>
+//   </View>
+//   )
+// }
+// export default App;
+
+// const styles = StyleSheet.create({
+//   button: {
+//          backgroundColor: 'blue',
+//          height: '10%',
+//          width: '40%',
+//          borderRadius: 30,
+//          alignItems: 'center',
+//          justifyContent: 'center'
+//        },
+//   container:{
+//     justifyContent:'center',
+//     alignItems:'center'
+//   }
+// });
+
+
+// const App = () =>{
+//      return (
+//        <View style={{flex:1}}>
+//        
+//          </View>
+//      )
+// }
+
+
+// export default App;
+Component.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string
+};
+
+
 const App = () => {
-  return(
-  
-  <View style={styles.container}>
-           <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed SUBMIT')}style={styles.button}>
-             <Text style={styles.text1}> SUBMIT </Text>
-           </TouchableOpacity>
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [number, setNumber] = useState('');
+  const [password, setPassword] = useState('');
+  return (
+    <View style={styles.conatiner}>
+      <EditText title='Nane:' onChange={text => setName(text)} value={1265} />
+      <EditText title='Email:' onChange={text => setEmail(text)} value={email} />
+      <EditText title='Number:' onChange={text => setNumber(text)} value={number} />
+      <EditText title='password:' onChange={text => setPassword(text)} value={password} secureTextEntry={true} />
 
-           <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed Press ME')}style={styles.button}>
-             <Text style={styles.text1}> Press Me </Text>
-           </TouchableOpacity>
-
-           <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed Enter Me')}style={styles.button}>
-             <Text style={styles.text1}> Enter Me </Text>
-           </TouchableOpacity>
-           <TouchableOpacity onPress={() => alert('Hi😊😉 you Pressed Tap')}style={styles.button}>
-             <Text style={styles.text1}> Tap ME </Text>
-           </TouchableOpacity>
-  </View>
+    </View>
   )
 }
+
+
 export default App;
 
 const styles = StyleSheet.create({
-  button: {
-         backgroundColor: 'blue',
-         height: '10%',
-         width: '40%',
-         borderRadius: 30,
-         alignItems: 'center',
-         justifyContent: 'center'
-       },
-  container:{
-    justifyContent:'center',
-    alignItems:'center'
+  conatiner: {
+    alignItems: "center",
+    justifyContent: "space-evenly"
   }
 });
