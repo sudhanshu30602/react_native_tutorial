@@ -11,10 +11,9 @@ import {
   Button,
   StyleSheet,
   Text,
-  TextInput,
-  SafeAreaView,
-  useColorScheme,
-  Alert,
+  Alert, 
+  Modal,
+  Pressable, 
   View,
   TouchableOpacity,
   ImageBackground,
@@ -165,35 +164,118 @@ import PropTypes from 'prop-types'
 // }
 
 
-// export default App;
-Component.propTypes = {
-  title: PropTypes.string.isRequired,
-  value: PropTypes.string
-};
+// // export default App;
+// Component.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   value: PropTypes.string
+// };
 
+
+// const App = () => {
+//   const [name, setName] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [number, setNumber] = useState('');
+//   const [password, setPassword] = useState('');
+//   return (
+//     <View style={styles.conatiner}>
+//       <EditText title='Nane:' onChange={text => setName(text)} value={1265} />
+//       <EditText title='Email:' onChange={text => setEmail(text)} value={email} />
+//       <EditText title='Number:' onChange={text => setNumber(text)} value={number} />
+//       <EditText title='password:' onChange={text => setPassword(text)} value={password} secureTextEntry={true} />
+
+//     </View>
+//   )
+// }
+
+
+// export default App;
+
+// const styles = StyleSheet.create({
+//   conatiner: {
+//     alignItems: "center",
+//     justifyContent: "space-evenly"
+//   }
+// });
 
 const App = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [number, setNumber] = useState('');
-  const [password, setPassword] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
   return (
-    <View style={styles.conatiner}>
-      <EditText title='Nane:' onChange={text => setName(text)} value={1265} />
-      <EditText title='Email:' onChange={text => setEmail(text)} value={email} />
-      <EditText title='Number:' onChange={text => setNumber(text)} value={number} />
-      <EditText title='password:' onChange={text => setPassword(text)} value={password} secureTextEntry={true} />
-
+    <View style={styles.centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Hello World😁😂😂😁!</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Hide Modal</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      <Pressable
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() => setModalVisible(true)}
+      >
+        <Text style={styles.textStyle}>Show Modal</Text>
+      </Pressable>
     </View>
-  )
-}
-
-
-export default App;
+  );
+};
 
 const styles = StyleSheet.create({
-  conatiner: {
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "space-evenly"
+    marginTop: 22,
+    
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "skyblue",
+    borderRadius: 20,
+    padding: 100,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 4,
+      height: 8
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    fontSize : 40,
+    textAlign: "center"
   }
 });
+
+export default App;
