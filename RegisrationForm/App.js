@@ -19,11 +19,14 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  FlatList,
   TextInput,
   ImageBackground,
 } from 'react-native';
-// import EditText from './component/EditText';
-// import Roundbutton from './component/Roundbutton';
+import EditText from './component/EditText';
+import Roundbutton from './component/Roundbutton';
+import Socialicon from './component/icon';
+import Menu from './component/menu';
 // import PropTypes from 'prop-types'
 
 // // const image = { uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/768px-React-icon.svg.png"};
@@ -287,148 +290,370 @@ import {
 
 
 
+// //************(**((********8)))
+// // login form
+
+// const image = { uri: "https://upload.wikimedia.org/wikipedia/en/8/8b/Purplecom.jpg" };
+
+// const fb = { uri: "https://image.flaticon.com/icons/png/512/1076/1076990.png?w=740" };
+
+// const google = { uri: "https://www.sketchappsources.com/resources/source-image/google-g-logo.jpg" };
+
+// const twitter = { uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgG3sQOmmsaW7wffjnuo_zCHHSTjqsUpiEFA&usqp=CAU" };
+
+// const App = () => {
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+//   return (
+
+//     <ImageBackground source={image} style={styles.image}>
+//       <View style={styles.conatiner}>
+//         <Image
+//           style={styles.imageLogo}
+//           source={{
+//             uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75ULL5H__OxAyqJHrGl6NHYILXNKDQqf0fg&usqp=CAU',
+//           }}
+//         />
+//         <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold' }}>Vision Go</Text>
+//       </View>
+//       <View style={styles.content}>
+//         <View>
+//           <Text style={styles.form}>Login Form</Text>
+//         </View>
+//         <View style={styles.set}>
+//           <Text style={styles.text1}> Email: </Text>
+//           <TextInput
+//             placeholder="Enter Your email."
+//             onChangeText={text => setEmail(text)}
+//             defaultValue={email}
+//           />
+//         </View>
+
+//         <View style={styles.set}>
+//           <Text style={styles.text1}> Password: </Text>
+//           <TextInput
+//             placeholder="Enter Your Password"
+//             onChangeText={text => setPassword(text)}
+//             defaultValue={password}
+//             secureTextEntry={true}
+//           />
+//         </View>
+
+//         {/* <View style={styles.checkboxContainer}>
+//         <CheckBox
+//           value={isSelected}
+//           onValueChange={setSelection}
+//          style={styles.checkbox}
+//         />
+//         <Text style={styles.label}>Do you like React Native?</Text>
+//       </View>  */}
+
+//         <View style={styles.button}>
+//           <TouchableOpacity onPress={() => alert('You Login in it😂🤣😁')}>
+//             <Text style={{ fontSize: 20, color: 'black' }}>Submit </Text>
+//           </TouchableOpacity>
+//         </View>
+//         <View style={styles.icon}>
+//           <TouchableOpacity>
+//             <Image source={fb} style={styles.buttonIcon} />
+//           </TouchableOpacity>
+//           <TouchableOpacity>
+//             <Image source={google} style={styles.buttonIcon} />
+//           </TouchableOpacity>
+//           <TouchableOpacity>
+//             <Image source={twitter} style={styles.buttonIcon} />
+//           </TouchableOpacity>
+//         </View>
+//       </View>
+//     </ImageBackground>
+//   )
+// }
+
+// const styles = StyleSheet.create({
+//   conatiner: {
+//     flex: 0.3,
+//     // color: 'white',
+//     alignItems: 'center',
+//     justifyContent: 'center'
+
+//   },
+//   image: {
+//     flex: 1
+//   },
+//   content: {
+//     flex: 0.7,
+//     backgroundColor: 'white',
+//     borderTopRightRadius: 50,
+//     borderTopLeftRadius: 50,
+//     alignItems: 'center',
+//     justifyContent: 'space-evenly'
+
+//   },
+//   form: {
+//     fontSize: 25,
+//     fontWeight: 'bold',
+//     color: 'black'
+//   },
+//   set: {
+//     width: '80%',
+//     borderColor: 'blue',
+//     borderBottomWidth: 1
+//   },
+//   text1: {
+//     fontWeight: 'bold',
+//     fontSize: 20,
+//     color: 'black'
+//   },
+//   button: {
+//     backgroundColor: 'cyan',
+//     height: '10%',
+//     width: '40%',
+//     borderRadius: 40,
+//     alignItems: "center",
+//     justifyContent: "center"
+//   },
+//   buttonIcon: {
+//     height: 25,
+//     width: 25,
+//     borderRadius: 10,
+//     marginHorizontal: 8
+//   },
+//   icon: {
+//     flexDirection: 'row',
+//     marginVertical: 5
+//   },
+//   imageLogo: {
+//     height: 80,
+//     width: 80,
+//     borderRadius: 50,
+//   }
+// });
+
+// export default App;
+
+
+
+
+
+
 //************(**((********8)))
-// login form
+// login form with help of Components
 
-const image = { uri: "https://upload.wikimedia.org/wikipedia/en/8/8b/Purplecom.jpg" };
+// const image = { uri: "https://upload.wikimedia.org/wikipedia/en/8/8b/Purplecom.jpg" };
 
-const fb = { uri: "https://image.flaticon.com/icons/png/512/1076/1076990.png?w=740" };
+// const fb = { uri: "https://image.flaticon.com/icons/png/512/1076/1076990.png?w=740" };
 
-const google = { uri: "https://www.sketchappsources.com/resources/source-image/google-g-logo.jpg" };
+// const google = { uri: "https://www.sketchappsources.com/resources/source-image/google-g-logo.jpg" };
 
-const twitter = { uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgG3sQOmmsaW7wffjnuo_zCHHSTjqsUpiEFA&usqp=CAU" };
+// const twitter = { uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgG3sQOmmsaW7wffjnuo_zCHHSTjqsUpiEFA&usqp=CAU" };
 
-const App = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+// const App = () => {
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+//   return (
+
+//     <ImageBackground source={image} style={styles.image}>
+//       <View style={styles.conatiner}>
+//         <Image
+//           style={styles.imageLogo}
+//           source={{
+//             uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75ULL5H__OxAyqJHrGl6NHYILXNKDQqf0fg&usqp=CAU',
+//           }}
+//         />
+//         <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold' }}>Vision Go</Text>
+//       </View>
+//       <View style={styles.content}>
+//         <View>
+//           <Text style={styles.form}>Login Form</Text>
+//         </View>
+//         <EditText
+//           title=" Email :"
+//           onChange={text => setEmail(text)}
+//           cont={email}
+//           placename="Enter your Email"
+//         />
+//         <EditText
+//           title=" Password :"
+//           onChange={text => setPassword(text)}
+//           cont={password}
+//           bool = {true}
+//           placename="Enter your password"
+//         />
+//         <Roundbutton
+//           title='Submit' />
+//       <View style={styles.icon}>
+//         <Socialicon
+//           icons={fb} />
+//         <Socialicon
+//           icons={twitter} />
+//         <Socialicon
+//           icons={google} />
+//         </View>
+//       </View>
+//     </ImageBackground>
+
+//   )
+// }
+
+// export default App;
+
+
+
+// const styles = StyleSheet.create({
+//   conatiner: {
+//     flex: 0.3,
+//     // color: 'white',
+//     alignItems: 'center',
+//     justifyContent: 'center'
+
+//   },
+//   image: {
+//     flex: 1
+//   },
+//   content: {
+//     flex: 0.7,
+//     backgroundColor: 'white',
+//     borderTopRightRadius: 50,
+//     borderTopLeftRadius: 50,
+//     alignItems: 'center',
+//     justifyContent: 'space-evenly'
+//   },
+//   form: {
+//     fontSize: 25,
+//     fontWeight: 'bold',
+//     color: 'black'
+//   },
+//   imageLogo: {
+//     height: 80,
+//     width: 80,
+//     borderRadius: 50,
+//   },
+//   icon: {
+//     flexDirection: 'row',
+//     marginVertical: 5
+//    }
+
+// });
+
+
+
+// // WhatsApp menu
+
+// const image = { uri: "https://upload.wikimedia.org/wikipedia/en/8/8b/Purplecom.jpg" };
+  
+// const App = () =>{
+//     return(
+//         <View style={styles.container}>
+//         <FlatList 
+//        //horizontal
+//         data={[
+//           {key: 'Devin'},
+//           {key: 'Dan'},
+//           {key: 'Dominic'},
+//           {key: 'Jackson'},
+//           {key: 'James'},
+//           {key: 'Joel'},
+//           {key: 'John'},
+//           {key: 'Jillian'},
+//           {key: 'Jimmy'},
+//           {key: 'Julie'},
+//           {key: 'Devin'},
+//           {key: 'Dan'},
+//           {key: 'Dominic'},
+//           {key: 'Jackson'},
+//           {key: 'James'},
+//           {key: 'Joel'},
+//           {key: 'John'},
+//           {key: 'Jillian'},
+//           {key: 'Jimmy'},
+//           {key: 'Julie'},
+//         ]} 
+//         numColumns ={2}
+//         renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+//         />
+//     </View>
+       
+//     )
+// }
+// export default App;
+
+// const styles = StyleSheet.create({
+//   container: {
+//    flex: 1,
+//   },
+//   item: {
+//     padding: 10,
+//     marginLeft:90,
+//     fontSize: 18,
+//     height: 44,
+//   },
+// });
+
+
+//******************************###################### */
+// In App.js in a new project
+
+/// Workin on multiple Screens
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+function HomeScreen({ navigation }) {
   return (
-
-    <ImageBackground source={image} style={styles.image}>
-      <View style={styles.conatiner}>
-        <Image
-          style={styles.imageLogo}
-          source={{
-            uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT75ULL5H__OxAyqJHrGl6NHYILXNKDQqf0fg&usqp=CAU',
-          }}
-        />
-        <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold' }}>Vision Go</Text>
-      </View>
-      <View style={styles.content}>
-        <View>
-          <Text style={styles.form}>Login Form</Text>
-        </View>
-        <View style={styles.set}>
-          <Text style={styles.text1}> Email: </Text>
-          <TextInput
-            placeholder="Enter Your email."
-            onChangeText={text => setEmail(text)}
-            defaultValue={email}
-          />
-        </View>
-
-        <View style={styles.set}>
-          <Text style={styles.text1}> Password: </Text>
-          <TextInput
-            placeholder="Enter Your Password"
-            onChangeText={text => setPassword(text)}
-            defaultValue={password}
-            secureTextEntry={true}
-          />
-        </View>
-
-        {/* <View style={styles.checkboxContainer}>
-        <CheckBox
-          value={isSelected}
-          onValueChange={setSelection}
-         style={styles.checkbox}
-        />
-        <Text style={styles.label}>Do you like React Native?</Text>
-      </View>  */}
-
-        <View style={styles.button}>
-          <TouchableOpacity onPress={() => alert('You Login in it😂🤣😁')}>
-            <Text style={{ fontSize: 20, color: 'black' }}>Submit </Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.icon}>
-          <TouchableOpacity>
-            <Image source={fb} style={styles.buttonIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={google} style={styles.buttonIcon} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={twitter} style={styles.buttonIcon} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    </ImageBackground>
-  )
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Text>😎😎😎</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      />
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({
-  conatiner: {
-    flex: 0.3,
-    // color: 'white',
-    alignItems: 'center',
-    justifyContent: 'center'
+function DetailsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Scren</Text>
+      <Button
+        title="Go to Details... again"
+        onPress={() => navigation.push('Details')}
+      />
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+      <Button
+        title="Go back to first screen in stack"
+        onPress={() => navigation.popToTop()}
+      />
+    </View>
+  );
+}
 
-  },
-  image: {
-    flex: 1
-  },
-  content: {
-    flex: 0.7,
-    backgroundColor: 'white',
-    borderTopRightRadius: 50,
-    borderTopLeftRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'space-evenly'
 
-  },
-  form: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: 'black'
-  },
-  set: {
-    width: '80%',
-    borderColor: 'blue',
-    borderBottomWidth: 1
-  },
-  text1: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    color: 'black'
-  },
-  button: {
-    backgroundColor: 'cyan',
-    height: '10%',
-    width: '40%',
-    borderRadius: 40,
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  buttonIcon: {
-    height: 25,
-    width: 25,
-    borderRadius: 10,
-    marginHorizontal: 8
-  },
-  icon: {
-    flexDirection: 'row',
-    marginVertical: 5
-  },
-  imageLogo: {
-    height: 80,
-    width: 80,
-    borderRadius: 50,
-  }
-});
+function CentalScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+      <Button
+        title="Go to Details... again"
+        onPress={() => navigation.push('Details')}
+      />
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Cental" component={CentalScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App;
-
-
-
-
-

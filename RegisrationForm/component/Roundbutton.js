@@ -19,12 +19,12 @@ const Roundbutton = props => {
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: 'yellow',
-           height: '10%',
-           width: '90%',
-           borderRadius: 50,
-           alignItems: "center",
-           justifyContent: "center"
+      backgroundColor: 'cyan',
+      height: '10%',
+      width: '40%',
+      borderRadius: 40,
+      alignItems: "center",
+      justifyContent: "center"
     }
     
         

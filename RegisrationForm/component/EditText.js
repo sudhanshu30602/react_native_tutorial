@@ -12,14 +12,14 @@ import {
 
 const EditText = props => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.text1}>{props.title}</Text>
             <TextInput 
-                placeholder="Enter Your Name"
+                placeholder={props.placename}
                 onChangeText={props.onChange}
                 value={props.value}
-                style={styles.container}
-                {...props}
+                secureTextEntry={props.bool}
+               // {...props}
             />
         </View>
     )
@@ -27,13 +27,13 @@ const EditText = props => {
 
 const styles = StyleSheet.create({
     container: {
-        borderBottomWidth: 2,
-        width: '90%',
-        borderColor: 'skyblue',
+        width: '80%',
+        borderColor: 'blue',
+        borderBottomWidth: 1
     },
     text1: {
         fontWeight: 'bold',
-        fontSize: 25,
+        fontSize: 20,
         color: 'black'
     }
 });
